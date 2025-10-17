@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Pokémon - Flip Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Buscador de Pokémon</h1>
+            <p class="subtitle">Busca tu Pokémon favorito por nombre o ID</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Ej: pikachu, 25, charizard..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="btn-search">Buscar</button>
+            </div>
+            <div id="errorMessage" class="error-message hidden"></div>
+        </div>
+
+        <div id="loadingSpinner" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Cargando...</p>
+        </div>
+
+        <div id="cardContainer" class="card-container hidden">
+            <div class="card-wrapper">
+                <div class="pokemon-card" id="pokemonCard">
+                    <!-- Cara frontal -->
+                    <div class="card-face card-front">
+                        <div class="pokemon-number" id="pokemonNumber">#001</div>
+                        <div class="pokemon-image-container">
+                            <img id="pokemonImage" src="" alt="Pokémon">
+                        </div>
+                        <h2 class="pokemon-name" id="pokemonName">Nombre</h2>
+                        <div class="pokemon-types" id="pokemonTypes"></div>
+                        <div class="pokemon-info">
+                            <div class="info-item">
+                                <span class="info-label">Peso:</span>
+                                <span class="info-value" id="pokemonWeight">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Altura:</span>
+                                <span class="info-value" id="pokemonHeight">-</span>
+                            </div>
+                        </div>
+                        <p class="flip-hint">👆 Haz clic para ver estadísticas</p>
+                    </div>
+
+                    <!-- Cara trasera -->
+                    <div class="card-face card-back">
+                        <h3 class="stats-title">📊 Estadísticas Base</h3>
+                        <div class="stats-container" id="statsContainer"></div>
+                        <p class="flip-hint">👆 Haz clic para volver</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
